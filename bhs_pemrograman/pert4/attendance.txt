@@ -1,0 +1,3 @@
+Name: farhan
+Age: 19
+Major: 2

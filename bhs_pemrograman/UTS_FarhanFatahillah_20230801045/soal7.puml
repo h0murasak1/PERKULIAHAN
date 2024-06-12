@@ -1,0 +1,21 @@
+@startuml UTS
+
+[*] --> input
+input : Masukkan angka pertama dan kedua
+input --> menu
+menu : 1. Tambah
+menu : 2. Kurang
+menu : 3. Kali
+menu : 4. Bagi
+menu --> pilihan
+pilihan : Masukkan Pilihan
+pilihan --> 1 : Tambah
+pilihan --> 2 : Kurang
+pilihan --> 3 : Kali
+pilihan --> 4 : Bagi
+1 : Tambah --> [*] : selesai
+2 : Kurang --> [*] : selesai
+3 : Kali --> [*] : selesai
+4 : Bagi --> [*] : selesai
+
+@enduml
