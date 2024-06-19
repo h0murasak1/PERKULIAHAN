@@ -1,0 +1,6 @@
+db/
+nginx/
+php/
+src/
+.env
+docker-compose.yml
