@@ -1,0 +1,1 @@
+print ('memek sodong bau kesang')

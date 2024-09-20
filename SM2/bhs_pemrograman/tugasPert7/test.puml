@@ -1,0 +1,30 @@
+@startuml name
+
+title <u><b>Sequence Diagram</b></u>
+
+autonumber "<b>."
+
+actor user #yellow
+participant "menu" as menu #aqua
+participant "pilihMenu" as pil #aqua
+participant "menu 1" as m1 #aqua
+participant "menu 2" as m2 #aqua
+participant "quantity" as qty #aqua
+participant "total" as tot #aqua
+
+user -> menu: Tampilkan menu utama
+menu -> pil: Pilih Menu 1 atau 2
+pil -> m1: tampilkan profil menu 1
+pil -> m2: tampilkan profil menu 2
+m1 -> qty: input quantity
+m2 -> qty: input quantity
+qty -> tot: hitung total
+tot --> user: selesai
+
+note right of user
+  User memilih menu,
+  lalu memasukkan quantity,
+  dan sistem menghitung total.
+end note
+
+@enduml

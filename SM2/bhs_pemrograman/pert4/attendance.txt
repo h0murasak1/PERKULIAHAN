@@ -1,0 +1,6 @@
+Name: farhan
+Age: 19
+Major: 2
+Name: hans
+Age: 19
+Major: TI
