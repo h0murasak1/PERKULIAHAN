@@ -1,0 +1,31 @@
+@startuml Academic
+
+actor Mahasiswa as mhs
+actor Dosen as dsn
+actor Operator as opr
+
+package ClassRoom {
+    usecase "pilih mata kuliah" as U1
+    usecase "jadwal kuliah" as U2
+    usecase "ruang perkuliahan" as U3
+    usecase "menerima penjadwalan perkuliahan" as U4
+    usecase "mengajar" as U7
+    usecase "mengirim nilai" as U5
+    usecase "tolak mengajar" as U6
+    usecase "atur jadwal" as U8
+    usecase "atur ruang" as U9
+}
+
+mhs --> U1
+U1 .> U2 : include
+U1 .> U3 : include
+mhs --> U4
+dsn --> U7
+U7 .> U6 : extend
+U7 .> U5 : extend
+opr --> U8
+opr --> U9
+U8 .> U2 : include
+U9 .> U3 : include
+
+@enduml
