@@ -1,3 +1,4 @@
+package sesi1;
 import java.util.Scanner;
 
 public class Kalkulator {
