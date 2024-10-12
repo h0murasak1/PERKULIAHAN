@@ -1,4 +1,4 @@
-package sesi2;
+package sesi2.materi;
 import java.util.Scanner;
 
 public class Kasir {
