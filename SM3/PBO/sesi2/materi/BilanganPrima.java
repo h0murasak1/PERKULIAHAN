@@ -1,7 +1,7 @@
 package sesi2.materi;
 
 public class BilanganPrima {
-    public static void main(String[] args) {
+    public static void main() {
         int batasBawah = 2, batasAtas = 30;
 
         System.out.println("Bilangan prima antara " + batasBawah + " dan " + batasAtas + " adalah: ");
