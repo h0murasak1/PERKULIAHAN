@@ -11,6 +11,8 @@ public class soal3 {
             angka = input.nextInt();
         } while(angka != 0);
         System.out.println("Keluar");
+        input.close();
+        
     }
 
 }

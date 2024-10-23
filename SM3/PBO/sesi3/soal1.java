@@ -16,5 +16,6 @@ public class soal1 {
         } else {
             System.out.println("Angka yang dimasukkan bukan angka");
         }
+        input.close();
     }
 }
