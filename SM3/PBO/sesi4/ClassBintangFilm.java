@@ -34,7 +34,7 @@ public class ClassBintangFilm {
         BintangFilm siB = new BintangFilm("Angelina Jolie", false);
 
         //menampilkan nama dan jenis kelamin
-        System.out.println("Nama: " + siA.perolehNama() + ", Jenis Kelamin: " + siA.perolehJenisKelamin());
-        System.out.println("Nama: " + siB.perolehNama() + ", Jenis Kelamin: " + siB.perolehJenisKelamin());
+        System.out.println("Nama\t\t: " + siA.perolehNama() + "\nJenis Kelamin\t: " + siA.perolehJenisKelamin());
+        System.out.println("\nNama\t\t: " + siB.perolehNama() + "\nJenis Kelamin\t: " + siB.perolehJenisKelamin());
     }
 }
