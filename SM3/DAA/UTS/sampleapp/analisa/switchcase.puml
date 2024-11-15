@@ -1,0 +1,24 @@
+@startuml switchcase
+actor Admin
+actor Guru
+
+usecase "Kelola Data Guru" as U1
+usecase "Kelola Jadwal" as U2
+usecase "Kelola Materi" as U3
+usecase "Kelola Penilaian" as U4
+usecase "Kelola Role" as U5
+usecase "Kelola User" as U6
+usecase "Melihat Jadwal Guru" as U7
+
+Admin --> U1
+Admin --> U2
+Admin --> U3
+Admin --> U4
+Admin --> U5
+Admin --> U6
+
+Guru --> U3
+Guru --> U4
+Guru --> U7
+
+@enduml

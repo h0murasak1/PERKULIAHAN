@@ -1,0 +1,57 @@
+@startuml rst
+entity Mahasiswa {
+    +id_mahasiswa : int
+    nama : string
+    email : string
+    tanggal_lahir : date
+    jurusan : string
+}
+
+entity MataKuliah {
+    +id_mata_kuliah : int
+    nama_mata_kuliah : string
+    sks : int
+}
+
+entity Dosen {
+    +id_dosen : int
+    nama : string
+    email : string
+}
+
+entity JadwalKuliah {
+    +id_jadwal : int
+    id_mata_kuliah : int
+    id_dosen : int
+    ruang : string
+    hari : string
+    jam_mulai : time
+    jam_selesai : time
+}
+
+entity Nilai {
+    +id_nilai : int
+    id_mahasiswa : int
+    id_mata_kuliah : int
+    nilai_tugas : float
+    nilai_ujian : float
+    nilai_akhir : float
+}
+
+entity Admin {
+    +id_admin : int
+    nama : string
+    email : string
+    password : string
+}
+
+Mahasiswa ||--o{ Nilai : "menerima"
+Mahasiswa ||--o{ JadwalKuliah : "mengikuti"
+Dosen ||--o{ MataKuliah : "mengajar"
+MataKuliah ||--o{ JadwalKuliah : "terjadwal"
+MataKuliah ||--o{ Nilai : "dinilai"
+Admin }|--|| Mahasiswa : "mengelola"
+Admin }|--|| Dosen : "mengelola"
+Admin }|--|| MataKuliah : "mengelola"
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml flowchart
+start
+
+if (Login sebagai Admin?) then (Ya)
+  :Akses fitur Admin;
+
+  if (Pilih Fitur?)
+  else if(Tambah User)
+    :Menambahkan User Baru;
+  else if (Role Management)
+    :Menambahkan Role Baru;
+    :Mengubah Role User;
+    :Menghapus Role User;
+  else if (Jadwal Management)
+    :Menampilkan Jadwal Guru;
+    :Menambahkan Jadwal;
+    :Mengubah Jadwal;
+    :Menghapus Jadwal;
+  else if (Penilaian Management)
+    :Mengelola Nilai Siswa;
+  else if (Materi Management)
+    :Mengelola Materi;
+  else if(Guru Management)
+    :Menambahkan Guru Baru;
+    :Menghapus Guru;
+  endif
+
+else
+  :Akses fitur Guru;
+
+  if (Pilih Fitur?)
+  else if (Jadwal)
+    :Menampilkan Jadwal Guru;
+  else if (Materi)
+    :Menampilkan Materi;
+  else if(Penilaian)
+    :Mengelola Nilai Siswa;
+  endif
+
+endif
+
+stop
+@enduml

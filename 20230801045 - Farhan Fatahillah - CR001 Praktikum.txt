@@ -1,0 +1,54 @@
+mysql> CREATE DATABASE UTS;
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| OrderEntry         |
+| UTS                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+7 rows in set (0.00 sec)
+ 
+mysql> USE UTS;
+Database changed
+
+mysql> CREATE TABLE MahasiswaEsgul (
+    -> NIM VARCHAR(10) PRIMARY KEY,
+    -> NAMA VARCHAR(50),
+    -> TanggalLahir DATE,
+    -> JenisKelamin CHAR(1),
+    -> Jurusan VARCHAR(50),
+    -> Alamat VARCHAR(100)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+ 
+mysql> desc MahasiswaEsgul;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| NIM          | varchar(10) | NO   | PRI | NULL    |       |
+| NAMA         | varchar(50) | YES  |     | NULL    |       |
+| TanggalLahir | date        | YES  |     | NULL    |       |
+| JenisKelamin | char(1)     | YES  |     | NULL    |       |
+| Jurusan      | varchar(50) | YES  |     | NULL    |       |
+| Alamat       | varchar(100)| YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO MahasiswaEsgul VALUES 
+    ->('2023080104', 'Farhan Fatahillah', '2001-08-01', 'L', 'Teknik Informatika', 'Kp. Sodong RT 03/03');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from MahasiswaEsgul;
++------------+-------------------+--------------+--------------+-------------------+----------------------+
+| NIM        | NAMA              | TanggalLahir | JenisKelamin | Jurusan           | Alamat               |
++------------+-------------------+--------------+--------------+-------------------+----------------------+
+| 2023080104 | Farhan Fatahillah | 2001-08-01   | L            | Teknik Informatika| Kp. Sodong RT 03/03  |
++------------+-------------------+--------------+--------------+-------------------+----------------------+
+1 row in set (0.00 sec)
