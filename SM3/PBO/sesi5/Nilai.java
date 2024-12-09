@@ -1,3 +1,5 @@
+package SM3.PBO.sesi5;
+
 public class Nilai {
     private int Quiz;
     private int Uts;
