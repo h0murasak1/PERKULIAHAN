@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->enum('category', ['Sepatu', 'Baju', 'Celana']);
+            $table->enum('category', ['Sepatu', 'Baju', 'Celana'])->nullable();
             $table->timestamps();
         });
     }
