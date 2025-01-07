@@ -1,0 +1,51 @@
+.navbar {
+  background-color: #333;
+  -fx-background-color: #333;
+  -fx-spacing: 10;
+  padding: 10px;
+  -fx-padding: 10;
+}
+
+.navbar Button {
+  background-color: #555;
+  -fx-background-color: #555;
+  -fx-text-fill: white;
+  font-size: 14px;
+  -fx-font-size: 14px;
+  padding: 10px;
+  -fx-padding: 10;
+}
+
+.navbar Button:hover {
+  background-color: #777;
+  -fx-background-color: #777;
+}
+
+.heading {
+  font-size: 18px;
+  -fx-font-size: 18px;
+  font-weight: bold;
+  -fx-font-weight: bold;
+}
+
+.label {
+  font-size: 14px;
+  -fx-font-size: 14px;
+}
+
+.text-field,
+.password-field {
+  padding: 5px;
+  -fx-padding: 5px;
+}
+
+.button {
+  background-color: #007bff;
+  -fx-background-color: #007bff;
+  -fx-text-fill: white;
+  padding: 5px 10px;
+  -fx-padding: 5px 10px;
+  border-radius: 5px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+}

@@ -1,54 +1,47 @@
-mysql> CREATE DATABASE UTS;
-Query OK, 1 row affected (0.00 sec)
- 
-mysql> SHOW DATABASES;
-+--------------------+
-| Database           |
-+--------------------+
-| OrderEntry         |
-| UTS                |
-| information_schema |
-| mysql              |
-| performance_schema |
-| phpmyadmin         |
-| test               |
-+--------------------+
-7 rows in set (0.00 sec)
- 
-mysql> USE UTS;
-Database changed
+### **Tugas Software Maintenance & Process Models**
 
-mysql> CREATE TABLE MahasiswaEsgul (
-    -> NIM VARCHAR(10) PRIMARY KEY,
-    -> NAMA VARCHAR(50),
-    -> TanggalLahir DATE,
-    -> JenisKelamin CHAR(1),
-    -> Jurusan VARCHAR(50),
-    -> Alamat VARCHAR(100)
-    -> );
-Query OK, 0 rows affected (0.04 sec)
- 
-mysql> desc MahasiswaEsgul;
-+--------------+-------------+------+-----+---------+-------+
-| Field        | Type        | Null | Key | Default | Extra |
-+--------------+-------------+------+-----+---------+-------+
-| NIM          | varchar(10) | NO   | PRI | NULL    |       |
-| NAMA         | varchar(50) | YES  |     | NULL    |       |
-| TanggalLahir | date        | YES  |     | NULL    |       |
-| JenisKelamin | char(1)     | YES  |     | NULL    |       |
-| Jurusan      | varchar(50) | YES  |     | NULL    |       |
-| Alamat       | varchar(100)| YES  |     | NULL    |       |
-+--------------+-------------+------+-----+---------+-------+
-6 rows in set (0.00 sec)
+---
 
-mysql> INSERT INTO MahasiswaEsgul VALUES 
-    ->('2023080104', 'Farhan Fatahillah', '2001-08-01', 'L', 'Teknik Informatika', 'Kp. Sodong RT 03/03');
-Query OK, 1 row affected (0.01 sec)
+#### **Simpulan Mengenai Software Maintenance & Process Models**  
+Software Maintenance adalah kegiatan yang memastikan perangkat lunak tetap relevan, berfungsi dengan baik, dan memenuhi kebutuhan pengguna setelah dirilis. Proses ini merupakan bagian penting dalam siklus hidup perangkat lunak. Sementara itu, Process Models adalah metode atau kerangka kerja yang membantu dalam merancang, mengembangkan, dan memelihara perangkat lunak secara sistematis.
 
-mysql> select * from MahasiswaEsgul;
-+------------+-------------------+--------------+--------------+-------------------+----------------------+
-| NIM        | NAMA              | TanggalLahir | JenisKelamin | Jurusan           | Alamat               |
-+------------+-------------------+--------------+--------------+-------------------+----------------------+
-| 2023080104 | Farhan Fatahillah | 2001-08-01   | L            | Teknik Informatika| Kp. Sodong RT 03/03  |
-+------------+-------------------+--------------+--------------+-------------------+----------------------+
-1 row in set (0.00 sec)
+---
+
+#### **Peran dan Fungsi dari Software Maintenance**  
+1. **Peran**:  
+   - Menjamin kelangsungan operasional perangkat lunak.  
+   - Memberikan solusi atas masalah atau kebutuhan baru.  
+   - Mengadaptasi perangkat lunak terhadap perubahan lingkungan teknologi.  
+
+2. **Fungsi**:  
+   - **Korektif**: Memperbaiki bug atau kesalahan program.  
+   - **Adaptif**: Menyesuaikan perangkat lunak dengan perubahan lingkungan, seperti pembaruan sistem operasi atau perangkat keras.  
+   - **Perfektif**: Menambahkan atau meningkatkan fitur untuk memenuhi kebutuhan pengguna yang berkembang.  
+   - **Preventif**: Mengantisipasi potensi masalah di masa depan dengan meningkatkan stabilitas dan keamanan sistem.
+
+---
+
+#### **Peran dan Fungsi dari Process Models**  
+1. **Peran**:  
+   - Memberikan struktur pada pengembangan dan pemeliharaan perangkat lunak.  
+   - Mengarahkan tim pengembang untuk bekerja secara efisien dan efektif.  
+   - Mengurangi risiko dalam pengembangan perangkat lunak.  
+
+2. **Fungsi**:  
+   - **Pengorganisasian Proyek**: Membagi proses menjadi langkah-langkah yang jelas, seperti perencanaan, desain, implementasi, pengujian, dan pemeliharaan.  
+   - **Memastikan Kualitas**: Meningkatkan kemungkinan perangkat lunak yang dikembangkan sesuai spesifikasi dan bebas dari kesalahan.  
+   - **Meningkatkan Kolaborasi**: Memudahkan komunikasi antara stakeholder dan pengembang.  
+
+---
+
+#### **Contoh Kasus Software Maintenance**  
+
+**Rangkuman**:  
+Kesimpulan dari jurnal yang berjudul "Penerapan Pemeliharaan Systems Maintenance Life Cycle Bank Swasta Nasional Berdasarkan IEEE dan ISO" adalah sebagai berikut:
+
+Proses pemeliharaan sistem perangkat lunak di bank merupakan elemen krusial untuk memenuhi kebutuhan bisnis yang terus berubah. Jurnal ini menekankan pentingnya penerapan Systems Maintenance Life Cycle (SMLC) sebagai standar dalam pengelolaan pemeliharaan perangkat lunak di bank swasta nasional. SMLC harus diikuti oleh semua pihak yang terlibat dalam proses pemeliharaan, dengan acuan pada standar internasional seperti ISO dan IEEE. Penerapan standar ini bertujuan untuk memastikan bahwa semua aspek pemeliharaan sistem perangkat lunak dikelola secara efektif, sehingga mendukung kelancaran operasional dan keamanan data dalam organisasi perbankan.
+
+**Sumber**: 
+PENERAPAN PEMELIHARAAN SYSTEMS MAINTENANCE LIFE CYCLE BANK SWASTA NASIONAL BERDASARKAN IEEE DAN ISO
+https://journal.stmikjayakarta.ac.id/index.php/jisicom/article/view/221
+
