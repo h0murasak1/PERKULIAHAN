@@ -1,9 +1,8 @@
-
-# **LAPORAN ANALISIS DAN DESAIN WEB APP KREATIVITAS BERBASIS LARAVEL**  
-##### **Tanggal**: Jumat, 31 Januari 2025
-
+# **LAPORAN ANALISIS DAN DESAIN WEB APP MANAJEMEN KARYA SENI BERBASIS LARAVEL**  
+##### **Tanggal**: Jumat, 31 Januari 2025  
 ##### **Disusun Oleh**: Farhan Fatahillah  
 
+---
 
 ## **Daftar Isi**  
 1. **Tujuan dan Ruang Lingkup**  
@@ -18,155 +17,123 @@
 ---
 
 ### **1. Tujuan dan Ruang Lingkup**  
-- **Tujuan**: Membangun platform web berbasis Laravel untuk memfasilitasi ekspresi kreativitas seni melalui fitur unggah karya, kustomisasi tema, dan kolaborasi real-time.  
+- **Tujuan**: Membangun platform web berbasis Laravel untuk memudahkan seniman dalam mengelola karya seni digital melalui operasi CRUD.  
 - **Ruang Lingkup**:  
-  - Fitur Utama: Galeri seni interaktif, generator tema, kolaborasi via komentar + doodle.  
-  - Target Pengguna: Seniman digital, desainer grafis, dan pengguna umum yang menyukai estetika visual.  
+  - **Fitur Utama**:  
+    - **Create**: Unggah karya seni (gambar/deskripsi).  
+    - **Read**: Tampilkan galeri karya.  
+    - **Update**: Edit informasi karya.  
+    - **Delete**: Hapus karya dari sistem.  
+  - **Target Pengguna**: Seniman digital, desainer grafis, dan konten kreator.  
 
 ---
 
 ### **2. Analisis 5W 1H**  
 #### **What (Apa yang Dibangun?)**  
-- Web app dengan UI/UX kreatif, galeri dinamis, dan fitur kolaborasi.  
+- Sistem CRUD untuk manajemen karya seni digital dengan antarmuka admin menggunakan **Filament**.  
 
 #### **Why (Mengapa Dibangun?)**  
-- Meningkatkan engagement pengguna melalui desain visual yang menarik.  
-- Memfasilitasi kolaborasi antar-seniman.  
+- Mengatasi kesulitan seniman dalam mengorganisir portofolio digital.  
+- Memfasilitasi pembaruan dan penghapusan karya secara efisien.  
 
 #### **Who (Siapa Pengguna dan Stakeholder?)**  
-- **Pengguna**: Seniman, desainer, dan umum.  
-- **Stakeholder**: Tim pengembang, admin, pemilik bisnis.  
+- **Pengguna**: Seniman dan desainer.  
+- **Stakeholder**: Admin (mengelola data via Filament).  
 
 #### **When (Timeline Pengembangan?)**  
-- **Fase Perancangan**: 2 minggu.  
-- **Fase Pengembangan**: 6 minggu.  
-- **Fase Testing**: 1 minggu.  
+- **Perancangan**: 3 hari.  
+- **Pengembangan**: 1 minggu.  
+- **Testing**: 2 hari.  
 
 #### **Where (Lokasi Penerapan?)**  
-- Frontend (animasi, tema), Backend (manajemen konten), Database (penyimpanan metadata).  
+- Backend (Laravel + Filament), Database (MySQL), dan lingkungan Docker untuk deployment.  
 
 #### **How (Cara Implementasi?)**  
-- Menggunakan Laravel untuk backend, Livewire untuk interaksi real-time, dan integrasi API AI (DALL-E).  
+- **Laravel**: Membangun logika CRUD.  
+- **Filament**: Membuat antarmuka admin untuk manajemen data.  
+- **Docker**: Containerisasi aplikasi dan database.  
 
 ---
 
 ### **3. Diagram Alir (Flowchart)**  
-**Deskripsi**: Alur interaksi pengguna dari login hingga upload karya dan kolaborasi.  
+**Deskripsi**: Alur CRUD karya seni oleh admin/seniman.  
 
 #### **Kode PlantUML**:  
 ```puml
 @startuml
 start
-:User mengakses web app;
-if (Sudah login?) then (Ya)
-else (Tidak)
-  :User melakukan Registrasi/Login;
-endif
-:User memilih aksi;
-split
-  -> Upload Karya;
-  :Unggah gambar/PDF;
-  :Tambahkan deskripsi & tag;
+:Admin/Seniman login via Filament;
+:Masuk ke dashboard manajemen karya;
+if (Aksi?) then (Create)
+  :Input judul, deskripsi, unggah gambar;
   :Simpan ke database;
-split again
-  -> Kustomisasi Tema;
-  :Pilih warna & font;
-  :Simpan preferensi tema;
-split again
-  -> Kolaborasi;
-  :Beri komentar + doodle;
-  :Simpan data kolaborasi;
-end split
-:User keluar atau lanjutkan eksplorasi;
+elseif (Read)
+  :Lihat daftar karya di galeri;
+elseif (Update)
+  :Edit judul/deskripsi/gambar;
+  :Update database;
+elseif (Delete)
+  :Pilih karya;
+  :Hapus dari database;
+endif
 stop
 @enduml
 ```  
 
 **Output**:  
-![Flowchart](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/ppfc.png)  
-
-### **Flowchart Proses:**
-- Sistem → Menyimpan tema ke database (How).
-
+![Flowchart CRUD Karya Seni](https://via.placeholder.com/600x400/0000FF/FFFFFF?text=Flowchart+CRUD+Seni)  
 
 ---
 
 ### **4. Diagram Use Case**  
-**Deskripsi**: Use case untuk pengguna umum dan admin.  
+**Deskripsi**: Interaksi pengguna dengan sistem.  
 
 #### **Kode PlantUML**:  
 ```puml
 @startuml
 left to right direction
-actor User as U
-actor Admin as A
+actor "Admin/Seniman" as A
 
-rectangle "Web App Kreativitas" {
-  (Login/Registrasi) as UC1
-  (Upload Artwork) as UC2
-  (Customize Theme) as UC3
-  (Collaborate with Doodle) as UC4
-  (Manage Content) as UC5
-  (Manage Users) as UC6
+rectangle "Manajemen Karya Seni" {
+  (Login) as UC1
+  (Upload Karya) as UC2
+  (Lihat Galeri) as UC3
+  (Edit Karya) as UC4
+  (Hapus Karya) as UC5
 }
 
-U --> UC1
-U --> UC2
-U --> UC3
-U --> UC4
-
-A --> UC5
-A --> UC6
 A --> UC1
-
-UC2 .> (AI Art Generation) : Include
-UC4 .> (Real-time Sync) : Extend
+A --> UC2
+A --> UC3
+A --> UC4
+A --> UC5
 
 note right of UC2
-  Pengguna dapat mengunggah
-  karya seni dan menambahkan
-  deskripsi/tag.
-end note
-
-note left of UC5
-  Admin dapat menghapus/mengedit
-  konten yang tidak sesuai.
+  Unggah gambar (JPEG/PNG)
+  beserta deskripsi karya.
 end note
 @enduml
 ```  
 
 **Output**:  
-![Use Case](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/ppuc.png)
-
-### **Use Case Diagram**
-- **Use Case "Upload Artwork"**:
-    - Aktor: Pengguna.
-    - Deskripsi: Pengguna mengunggah karya seni dengan tambahan deskripsi dan tag (What + How).
-
-- **Use Case "Generate Custom Theme"**:
-    - Aktor: Pengguna.
-    - Deskripsi: Pengguna memilih warna dan font untuk personalisasi tampilan (Why + Where).
+![Use Case CRUD Seni](https://via.placeholder.com/600x400/008000/FFFFFF?text=Use+Case+CRUD+Seni)  
 
 ---
 
 ### **5. Deskripsi Database**  
 #### **Tabel Utama**:  
-| **Tabel**       | **Kolom**                          | **Deskripsi**                              |  
-|-----------------|------------------------------------|--------------------------------------------|  
-| `users`         | `id, name, email, password, avatar` | Menyimpan data pengguna.                   |  
-| `artworks`      | `id, user_id, title, file_path`    | Menyimpan metadata karya seni.             |  
-| `themes`        | `id, user_id, primary_color`       | Menyimpan preferensi tema pengguna.        |  
-| `comments`      | `id, artwork_id, doodle_data`      | Menyimpan komentar dan doodle kolaborasi.  |  
+| **Tabel**   | **Kolom**                           | **Deskripsi**                     |  
+|-------------|-------------------------------------|-----------------------------------|  
+| `users`     | `id, name, email, password`         | Data admin/seniman.               |  
+| `artworks`  | `id, user_id, title, description, image_url` | Menyimpan metadata karya seni.    |  
 
 #### **Relasi**:  
 - `users` → `artworks` (1:N).  
-- `users` → `themes` (1:N).  
-- `artworks` → `comments` (1:N).  
 
 ---
 
 ### **6. Struktur ERD**  
-**Kode PlantUML untuk ERD**:
+**Kode PlantUML**: 
 
 ```puml
 @startuml
@@ -176,7 +143,6 @@ entity Users {
   name
   email
   password
-  avatar
 }
 
 entity Artworks {
@@ -184,53 +150,78 @@ entity Artworks {
   --
   user_id [FK]
   title
-  file_path
+  description
+  image_url
 }
 
-entity Themes {
-  + id [PK]
-  --
-  user_id [FK]
-  primary_color
-  secondary_color
-}
-
-entity Comments {
-  + id [PK]
-  --
-  artwork_id [FK]
-  doodle_data
-}
-
-Users ||--o{ Artworks : "Upload"
-Users ||--o{ Themes : "Customize"
-Artworks ||--o{ Comments : "Collaborate"
+Users ||--o{ Artworks : "Memiliki"
 @enduml
 ```
-### **Relasi ERD Berbasis Analisis 5W 1H:**
-- What & How → Tabel artworks dan themes untuk menyimpan data kreatif.
-- Who → Tabel users dengan relasi ke artworks dan comments.
-- Where → Tabel comments dengan kolom doodle_data untuk menyimpan gambar kolaborasi.
 
 **Output**:  
-![ERD](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/erd.png)  
+![ERD Karya Seni](https://via.placeholder.com/600x400/FF0000/FFFFFF?text=ERD+Seni)  
 
 ---
 
 ### **7. Teknologi dan Tools**  
-| **Kategori**   | **Teknologi**                              |  
-|----------------|--------------------------------------------|  
-| Backend        | Laravel 10, MySQL, Redis                   |  
-| Frontend       | Livewire, Alpine.js, Tailwind CSS          |  
-| Desain         | Figma, Adobe Illustrator                   |  
+| **Kategori**   | **Teknologi**              | **Fungsi**                              |  
+|----------------|----------------------------|-----------------------------------------|  
+| Backend        | Laravel 10 + Filament      | CRUD operations & admin panel.          |  
+| Database       | MySQL 8.0                  | Penyimpanan data pengguna dan karya.    |  
+| Deployment     | Docker                     | Containerisasi aplikasi dan database.   |  
 
 ---
 
 ### **8. Kesimpulan**  
-Laporan ini merangkum analisis, desain, dan struktur teknis web app berbasis Laravel untuk kebutuhan kreativitas dan seni. Dengan menggunakan PlantUML, flowchart dan use case diagram dapat digenerate secara konsisten. Implementasi akan fokus pada **UI interaktif**, **personalisasi tema**, dan **kolaborasi real-time** untuk meningkatkan engagement pengguna.  
+Laporan ini merancang web app manajemen karya seni berbasis **Laravel** dan **Filament** dengan fitur CRUD inti. Filament digunakan untuk membangun antarmuka admin yang efisien, sementara Docker memastikan konsistensi lingkungan pengembangan. Sistem ini ditujukan untuk membantu seniman mengorganisir portofolio digital secara terstruktur.  
 
 --- 
 
 **Lampiran**:  
-- File PlantUML untuk flowchart, use case, dan ERD.  
-- Dokumen spesifikasi teknis lengkap.  
+1. **Contoh Docker Configuration**:  
+   ```dockerfile
+   # Dockerfile
+   FROM php:8.2-apache
+   RUN docker-php-ext-install pdo_mysql
+   COPY . /var/www/html
+   RUN chmod -R 755 /var/www/html
+   ```  
+   ```yaml
+   # docker-compose.yml
+   version: '3'
+   services:
+     app:
+       build: .
+       ports:
+         - "8000:80"
+       volumes:
+         - .:/var/www/html
+     db:
+       image: mysql:8.0
+       environment:
+         MYSQL_ROOT_PASSWORD: root
+         MYSQL_DATABASE: art_db
+   ```  
+
+2. **Struktur File Laravel + Filament**:  
+   ```
+   app/
+     Filament/
+       Resources/
+         ArtworkResource.php
+   database/
+     migrations/
+       2025_01_31_create_artworks_table.php
+   resources/
+     views/
+       filament/
+         resources/
+           artwork-resource/
+             list.blade.php
+   ```  
+
+--- 
+
+**Catatan**:  
+- **Filament** digunakan untuk membuat admin panel siap pakai dengan fitur CRUD otomatis.  
+- **Docker** menghemat waktu setup lingkungan development dengan container MySQL dan PHP.
