@@ -83,7 +83,7 @@ stop
 ```  
 
 **Output**:  
-![Flowchart](//www.plantuml.com/plantuml/png/PP1DImCn443l-HLpaXQHtbtG8kAb7efj3nvdoMnsp4T2Cg7uxyscLGhUTZVxtfl9jWXcgTwf_g0UJuKoU0e6RQ42Pne1KneKJx0wL8qpk6WuFAz1PWgm-iIr8bS8LaVMQDSAuDVXq5QB0Jx8S96CXJVl2pie2fgdlvPdnpEq7W-g9CVI70zFS4ekeeOTvcySkZOOq_e6_OXvitzzwr-Fo-kyT3GLcpaLXZiGDFtqm3wr8qkWKN34GjS6e44EbzAk5ecU2pRqIFvIs_UfpfW3DjyKWzmAKwQ9CeL6I2V-IwF3CIvRT-w5CeEDde9WXdlGCMf7Dye-8DWRYeA6hhtUb2LN6uk25Ho6hogsOMJRFrUYhP7Kjd7Lkny0)  
+![Flowchart](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/ppfc.png)  
 
 ### **Flowchart Proses:**
 - Sistem → Menyimpan tema ke database (How).
@@ -136,7 +136,7 @@ end note
 ```  
 
 **Output**:  
-![Use Case](//www.plantuml.com/plantuml/png/JP51RnCn48Nl_XMZdjf36j7I7ZXKNGM4Aa12XOZp99vuH-iTh-nPGa3yTpmh4-NsxE_vFNlyN1IppcDqaGuAcY1pw1KyPzeh9t6urvHXMoW35jYsTUT75jled3CdIeW4Lpze1zqqmQTCgFoJ5SiL_740rvzJO5c_Kk2Y6GlVB6cRDyQsKqpeeSjwJ7bevCx8PYwQHlvDyBsdaHgwNr2A4NSfen8SMNjudvAF_orlpV851GF19ecIQ2CF5yHULTh-e_lht1PMgoUxrbdTdTLzKnRkkYOVpkhHL3liwZcuVOBhxiLU1Hz9AAEDymRUmOliu-p9rQ35z4eOLyeZmRUJxCtnuPUIUESaARKFIOSsawya8So2u752XP6ahaB0lh81ymcXa72bOWp77VO3IeMUof1vAhnM3BUk5e3bjvP8XrPY0rg-zwAXnsakQrFaMQrfcIcSK08eUnngQvcHBtAVgvh7-0y0)
+![Use Case](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/ppuc.png)
 
 ### **Use Case Diagram**
 - **Use Case "Upload Artwork"**:
@@ -213,7 +213,7 @@ Artworks ||--o{ Comments : "Collaborate"
 - Where → Tabel comments dengan kolom doodle_data untuk menyimpan gambar kolaborasi.
 
 **Output**:  
-![ERD](//www.plantuml.com/plantuml/png/ZP2nJiD038RtUufJLfGNO2ggnCB2G2U48jCpwWaxZcm7L5hU7OS0AKEbBh7p-_UdtxSo1_MHAM7lrVTvOwYM3oddgrnBVho_Uug-RUFJ0sCKPAWKTG2pTz4IBRn1OD9d-gNSgCVezGneDDHkqcw_jTYW2VnI2Ri1V7S2UjWXusMOGIk3xhkja6Zy6swbBukoGDV27EqPBCpPJyX5f4Iq0WuJPNwYux5jvR1SUfsRpK02fVbl-BaWnklHNBX-O9F-jcRJacYo2H4yYuA7SOLz6Pc-0000)  
+![ERD](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/erd.png)  
 
 ---
 
