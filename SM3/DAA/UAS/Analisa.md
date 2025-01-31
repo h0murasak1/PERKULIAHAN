@@ -81,7 +81,7 @@ stop
 ```  
 
 **Output**:  
-![Flowchart CRUD Karya Seni](https://via.placeholder.com/600x400/0000FF/FFFFFF?text=Flowchart+CRUD+Seni)  
+![Flowchart CRUD Karya Seni](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/fc.png)  
 
 ---
 
@@ -116,7 +116,7 @@ end note
 ```  
 
 **Output**:  
-![Use Case CRUD Seni](https://via.placeholder.com/600x400/008000/FFFFFF?text=Use+Case+CRUD+Seni)  
+![Use Case CRUD Seni](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/uc.png)  
 
 ---
 
@@ -159,7 +159,7 @@ Users ||--o{ Artworks : "Memiliki"
 ```
 
 **Output**:  
-![ERD Karya Seni](https://via.placeholder.com/600x400/FF0000/FFFFFF?text=ERD+Seni)  
+![ERD Karya Seni](https://github.com/h0murasak1/PERKULIAHAN/blob/master/SM3/DAA/UAS/Gambar/erd.png)  
 
 ---
 
